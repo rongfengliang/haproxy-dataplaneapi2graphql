@@ -1,0 +1,9 @@
+version: "3"
+services:
+    graphql:
+      build: ./
+      ports:
+      - "3009:3009"
+      environment:
+      - "URL=http://admin:dalong@10.6.231.214:5555/v1/"
+      image: dalongrong/haproxy-dataplaneapi2graphql

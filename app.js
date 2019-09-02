@@ -1,9 +1,9 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const graphqlHTTP = require('express-graphql');
 const graphQLSchema = require('swagger-to-graphql');
-
-const proxyUrl = 'http://admin:dalong@localhost:5555/v1/';
+const proxyUrl = process.env.URL
 const pathToSwaggerSchema = './api.json';
 const customHeaders = {
     //  Authorization: 'Basic YWRkOmJhc2ljQXV0aA=='
@@ -21,7 +21,7 @@ graphQLSchema(pathToSwaggerSchema, proxyUrl, customHeaders)
       }),
     );
 
-    app.listen(3009, 'localhost', () => {
+    app.listen(3009, '0.0.0.0', () => {
       console.info('http://localhost:3009/graphql');
     });
   })
