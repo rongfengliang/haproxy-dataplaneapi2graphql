@@ -6,7 +6,7 @@ haproxy-dataplaneapi2graphql
 * with docker
 
 ```code
-docker run -d -p 3009:3009 -e URL=http://admin:dalong@10.6.231.214:5555/v1/ dalongrong/haproxy-dataplaneapi2graphql
+docker run -d -p 3009:3009 -e URL=http://<user>:<password>@haproxyhost:5555/v1/ dalongrong/haproxy-dataplaneapi2graphql
 ```
 
 * with docker-compose
